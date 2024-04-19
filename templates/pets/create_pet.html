@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+<main>
+
+    <!-- Start Add Pet Section-->
+    <div class="edit-delete edit-photo">
+        <h2>Add pet</h2>
+
+        <!-- Start Add Pet Form -->
+        <form action="{% url 'create_pet'%}" method="post">
+            
+            {{form.as_p }}
+            
+            <button class="add-btn" type="submit">Add Pet</button>
+            {% csrf_token %}
+        </form>
+
+    </div>
+    <!-- End Add Pet Section -->
+
+</main>
+{% endblock %}
